@@ -8,6 +8,7 @@ const Canvas = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [showDeleteHint, setShowDeleteHint] = useState<string | null>(null);
 
+  
   const handleDragStart = (
     e: React.DragEvent<HTMLDivElement>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -56,14 +57,14 @@ const Canvas = () => {
   };
 
   return (
-    <div className={styles.canvas}>
+    <div id="canvas" className={styles.canvas}>
       {elements.map((el) => (
         <div
           key={el.id}
           className={`${styles.element} ${
             selectedId === el.id ? styles.selected : ''
           }`}
-          style={{ left: el.x, top: el.y,zIndex: selectedId === el.id ? 10 : 1, }}
+          style={{ position: 'absolute',left: el.x, top: el.y,zIndex: selectedId === el.id ? 10 : 1, }}
           draggable
           onDragStart={(e) => handleDragStart(e, el.id)}
           onDragEnd={(e) => handleDragEnd(e, el.id)}
