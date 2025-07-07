@@ -27,8 +27,8 @@ body,body.light {
   --space-m: 12px;
   --space-s: 8px;
 
-   --color-background: #ffffff;
-    --color-background-secondary: #fdf6ec;
+   --color-background: #fdf6ec;
+    --color-background-secondary: #ffffff;
     --color-category-chip: #eceae6;
     --color-text: #3a2e27;
     --color-heading-text: #1e1e1e;
