@@ -1,6 +1,6 @@
-import CanvasArea from '../components/CanvasArea';
-import Sidebar from '../components/Sidebar';
-import Toolbar from '../components/Toolbar';
+import CanvasArea from '../../components/CanvasArea';
+import Sidebar from '../../components/Sidebar';
+import Toolbar from '../../components/Toolbar';
 import styles from './Home.module.css';
 
 const Home = () => {
