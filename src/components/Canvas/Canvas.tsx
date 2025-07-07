@@ -22,17 +22,27 @@ const Canvas = () => {
   };
 
   const handleDragEnd = (
-    e: React.DragEvent<HTMLDivElement>,
-    id: string
-  ) => {
-    const canvasRect = e.currentTarget.parentElement?.getBoundingClientRect();
-    if (!canvasRect) return;
+  e: React.DragEvent<HTMLDivElement>,
+  id: string
+) => {
+  const canvas = e.currentTarget.parentElement;
+  if (!canvas) return;
 
-    const newX = e.clientX - canvasRect.left - dragOffset.current.x;
-    const newY = e.clientY - canvasRect.top - dragOffset.current.y;
+  const canvasRect = canvas.getBoundingClientRect();
+  const offsetX = dragOffset.current.x;
+  const offsetY = dragOffset.current.y;
 
-    moveElement(id, newX, newY);
-  };
+  let newX = e.clientX - canvasRect.left - offsetX;
+  let newY = e.clientY - canvasRect.top - offsetY;
+
+  const maxX = canvas.clientWidth - 60; 
+  const maxY = canvas.clientHeight - 60;
+
+  newX = Math.max(0, Math.min(newX, maxX));
+  newY = Math.max(0, Math.min(newY, maxY));
+
+  moveElement(id, newX, newY);
+};
 
   const handleClick = (id: string) => {
     if (showDeleteHint === id) {
@@ -53,7 +63,7 @@ const Canvas = () => {
           className={`${styles.element} ${
             selectedId === el.id ? styles.selected : ''
           }`}
-          style={{ left: el.x, top: el.y }}
+          style={{ left: el.x, top: el.y,zIndex: selectedId === el.id ? 10 : 1, }}
           draggable
           onDragStart={(e) => handleDragStart(e, el.id)}
           onDragEnd={(e) => handleDragEnd(e, el.id)}
