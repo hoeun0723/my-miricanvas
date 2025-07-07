@@ -1,13 +1,16 @@
 import './styles/global.css'
 import { RouterProvider } from 'react-router-dom';
 import router from './router/Router';
-import CanvasElementsProvider from './context/CanvasElementsProvider';
+import {CanvasElementsProvider} from './context/CanvasContext/CanvasElementsProvider';
+import ThemeModeProvider from './context/ThemeContext/ThemeModeProvider';
 
 function App() {
   return (
-    <CanvasElementsProvider>
-      <RouterProvider router={router}/>
-    </CanvasElementsProvider>
+    <ThemeModeProvider>
+      <CanvasElementsProvider>
+        <RouterProvider router={router}/>
+      </CanvasElementsProvider>
+    </ThemeModeProvider>
   );
 }
 

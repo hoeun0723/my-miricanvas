@@ -1,14 +1,22 @@
-import { useState } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useState } from 'react';
 import type {ReactNode} from 'react';
-import { CanvasElementsContext } from './CanvasElementsContext';
-import type { CanvasElementsContextType} from './CanvasElementsContext';
-import type { CanvasElement } from '../constants/canvasElementsTypes';
+import type { CanvasElement } from '../../constants/canvasElementsTypes';
 
 interface Props {
   children: ReactNode;
 }
 
-const CanvasElementsProvider = ({ children }: Props) => {
+export interface CanvasElementsContextType {
+  elements: CanvasElement[];
+  addElement: (item: Omit<CanvasElement, 'id'>) => void;
+  moveElement: (id: string, x: number, y: number) => void;
+  removeElement: (id: string) => void;
+}
+
+const CanvasElementsContext = createContext<CanvasElementsContextType | undefined>(undefined);
+
+export const CanvasElementsProvider = ({ children }: Props) => {
   const [elements, setElements] = useState<CanvasElement[]>([]);
 
   const addElement = (item: Omit<CanvasElement, 'id'>) => {
@@ -40,4 +48,10 @@ const CanvasElementsProvider = ({ children }: Props) => {
   );
 };
 
-export default CanvasElementsProvider;
+export const useCanvasElements = () => {
+  const context = useContext(CanvasElementsContext);
+  if (!context) {
+    throw new Error('useCanvasElements must be used within CanvasElementsProvider');
+  }
+  return context;
+};

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import useCanvasElements from '../../context/useCanvasElements';
 import styles from './Canvas.module.css';
+import { useCanvasElements } from '../../context/CanvasContext/CanvasElementsProvider';
 
 const Canvas = () => {
   const { elements, moveElement, removeElement } = useCanvasElements();
