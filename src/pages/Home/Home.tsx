@@ -9,7 +9,9 @@ const Home = () => {
       <Toolbar />
       <div className={styles.main}>
         <Sidebar />
+        <div className={styles.canvasScrollArea}>
         <Canvas />
+        </div>
       </div>
     </div>
   );

@@ -1,12 +1,21 @@
-.canvas {
+.canvasContainer {
   position: relative;
-  margin: 40px auto;
-  width: 794px;
-  height: 1123px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   background-color: var(--color-background-secondary);
-  border: 2px dashed var(--color-gray-1000);
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.canvasSheet {
+  width: 794px; 
+  min-height: 1123px;
+  background-color: white;
+  border: 0.5px solid var(--color-gray-1000);
+  padding: 40px;
+  position: relative;
 }
 
 /* 요소 박스 */
@@ -18,7 +27,7 @@
   padding: 12px;
   min-width: 60px;
   min-height: 60px;
-  font-size: 24px;
+  font-size: 12px;
   cursor: grab;
   transition: box-shadow 0.2s ease;
   user-select: none;

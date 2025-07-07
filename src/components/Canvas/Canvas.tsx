@@ -57,7 +57,8 @@ const Canvas = () => {
   };
 
   return (
-    <div id="canvas" className={styles.canvas}>
+    <div className={styles.canvasContainer}>
+    <div id="canvas" className={styles.canvasSheet}>
       {elements.map((el) => (
         <div
           key={el.id}
@@ -77,6 +78,7 @@ const Canvas = () => {
           )}
         </div>
       ))}
+    </div>
     </div>
   );
 };
