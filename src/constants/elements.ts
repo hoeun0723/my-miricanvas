@@ -1,8 +1,6 @@
-export const ELEMENTS: {
-  emojis: string[];
-  shapes: string[];
-  texts: string[];
-} = {
+import type { ElementsType } from "../type/canvasElementsTypes";
+
+export const ELEMENTS:ElementsType = {
   emojis: ['🌸', '🌟', '🔥', '💡'],
   shapes: ['⬛️', '⬜️', '🔺', '🔵'],
   texts: ['나를 표현하는 말', '성격', '협업 스타일'],

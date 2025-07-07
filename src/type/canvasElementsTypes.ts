@@ -7,3 +7,9 @@ export interface CanvasElement {
   x: number;
   y: number;
 }
+
+export interface ElementsType{
+  emojis: string[];
+  shapes: string[];
+  texts: string[];
+}
