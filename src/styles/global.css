@@ -1,6 +1,5 @@
 @import url('./media.css');
 
-/* 기본 Reset */
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +14,7 @@ body,
   scroll-behavior: smooth;
 }
 
-/* 글로벌 변수 (Light 기본) */
-html {
+body,body.light {
   --z-index-top: 999;
   --z-index-second: 500;
   --padding-xl: 100px;
@@ -29,22 +27,48 @@ html {
   --space-m: 12px;
   --space-s: 8px;
 
-  --color-background: #ffffff;
-  --color-text: #3a2e27;
-  --color-primary: #d78c49;
-  --color-secondary: #a8745d;
-  --color-white: #ffffff;
-  --color-black: #2e2e2e;
+   --color-background: #fdf6ec;
+    --color-background-secondary: #ffffff;
+    --color-category-chip: #eceae6;
+    --color-text: #3a2e27;
+    --color-heading-text: #1e1e1e;
+    --color-paragraph: #5e5148;
+    --color-anchor-text: #c96f2b;
+    --color-code-background: #f0e6da;
+    --color-code-text: #3a2e27;
+    --color-table-background-color: #ffffff;
+    --color-table-background-color-second: #f7f3ef;
+    --color-table-border: #d8cbc1;
+    --color-navigation-shadow: rgba(0, 0, 0, 0.04);
+    --color-primary: #d78c49;
+    --color-secondary: #a8745d;
+
+    --color-white: #ffffff;
+    --color-black: #2e2e2e;
+    --color-gray: #7d7066;
+    --color-gray-1000: #4d433c;
+    --color-overlay: #5c5144cc;
+
 }
 
-/* 다크모드 대응 (html에 .dark 클래스 추가 시 적용) */
-html.dark {
+
+body.dark {
   --color-background: #1f1b18;
-  --color-text: #e7e1dc;
-  --color-primary: #f5b56b;
-  --color-secondary: #d1a175;
-  --color-white: #ffffff;
-  --color-black: #000000;
+    --color-background-secondary: #2a2522;
+    --color-category-chip: #3c3530;
+    --color-text: #e7e1dc;
+    --color-heading-text: #ffffff;
+    --color-paragraph: #d2c4bd;
+    --color-anchor-text: #ffcc8f;
+    --color-code-background: #3e372f;
+    --color-code-text: #ffe9d6;
+    --color-table-background-color: #2a2522;
+    --color-table-background-color-second: #1a1816;
+    --color-table-border: #6f5f55;
+    --color-navigation-shadow: rgba(0, 0, 0, 0.08);
+
+    --color-primary: #f5b56b;
+    --color-secondary: #d1a175;
 }
 
 a,

@@ -1,6 +1,6 @@
-import CanvasArea from '../../components/CanvasArea';
+import Canvas from '../../components/Canvas/Canvas';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Toolbar from '../../components/Toolbar';
+import Toolbar from '../../components/Toolbar/Toolbar';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -9,7 +9,9 @@ const Home = () => {
       <Toolbar />
       <div className={styles.main}>
         <Sidebar />
-        <CanvasArea />
+        <div className={styles.canvasScrollArea}>
+        <Canvas />
+        </div>
       </div>
     </div>
   );

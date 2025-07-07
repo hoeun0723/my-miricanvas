@@ -1,0 +1,63 @@
+.canvasContainer {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--color-background-secondary);
+  
+}
+
+.canvasSheet {
+  width: 794px; 
+  min-height: 1123px;
+  background-color: white;
+  border: 0.5px solid var(--color-gray-1000);
+  padding: 40px;
+  position: relative;
+}
+
+/* 요소 박스 */
+.element {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  min-width: 60px;
+  min-height: 60px;
+  font-size: 12px;
+  cursor: grab;
+  transition: box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.element:active {
+  cursor: grabbing;
+}
+
+.selected {
+  box-shadow: 0 0 0 3px var(--color-primary);
+}
+
+/* 요소 내용 */
+.value {
+  margin-right: 6px;
+}
+
+/* 삭제 안내 문구 */
+.hint {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  background-color: var(--color-black);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: var(--z-index-top);
+  pointer-events: none;
+}

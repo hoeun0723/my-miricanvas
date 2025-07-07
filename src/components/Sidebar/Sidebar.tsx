@@ -1,12 +1,19 @@
 import styles from './Sidebar.module.css';
 import type { ElementType } from '../../constants/elements';
-import {ELEMENTS} from '../../constants/elements';
+import { ELEMENTS } from '../../constants/elements';
 import SidebarItem from './SidebarItem';
+import { useCanvasElements } from '../../context/CanvasContext/CanvasElementsProvider';
 
 const Sidebar = () => {
+  const { addElement } = useCanvasElements();
+
   const handleClick = (type: ElementType, value: string) => {
-    // TODO: 선택된 요소를 상태로 올려서 Canvas로 전달할 수 있게!
     console.log(`선택됨: [${type}] ${value}`);
+    // 랜덤 위치 (예: 50~300px 사이)
+    const x = Math.floor(Math.random() * 250) + 50;
+    const y = Math.floor(Math.random() * 250) + 50;
+
+    addElement({ type, value, x, y });
   };
 
   return (
