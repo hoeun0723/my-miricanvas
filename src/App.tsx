@@ -1,9 +1,10 @@
 import './styles/global.css'
-import Home from './pages/Home';
+import { RouterProvider } from 'react-router-dom';
+import router from './router/Router';
 
 function App() {
   return (
-      <Home />
+      <RouterProvider router={router}/>
   );
 }
 
