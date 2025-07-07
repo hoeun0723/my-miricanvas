@@ -1,4 +1,4 @@
-import CanvasArea from '../../components/CanvasArea';
+import Canvas from '../../components/Canvas/Canvas';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Toolbar from '../../components/Toolbar';
 import styles from './Home.module.css';
@@ -9,7 +9,7 @@ const Home = () => {
       <Toolbar />
       <div className={styles.main}>
         <Sidebar />
-        <CanvasArea />
+        <Canvas />
       </div>
     </div>
   );
