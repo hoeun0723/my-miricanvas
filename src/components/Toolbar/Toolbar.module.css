@@ -1,0 +1,36 @@
+.header {
+  height: 60px;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-table-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: var(--color-text);
+}
+
+.title {
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.themeToggleButton {
+  background-color: var(--color-category-chip);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.saveButton {
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: white;
+  font-weight: 600;
+}

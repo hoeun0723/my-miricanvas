@@ -1,6 +1,7 @@
 .sidebar {
   width: 200px;
   background-color: var(--color-background-secondary);
+  color: var(--color-text);
   padding: var(--space-m);
   display: flex;
   flex-direction: column;
@@ -16,6 +17,7 @@
 
 .item {
   background-color: var(--color-category-chip);
+  color: var(--color-text);
   border-radius: 6px;
   padding: 6px 10px;
   font-size: 14px;
@@ -24,5 +26,5 @@
 }
 .item:hover {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
 }
