@@ -2,7 +2,7 @@ import styles from './Sidebar.module.css';
 import type { ElementType } from '../../constants/elements';
 import { ELEMENTS } from '../../constants/elements';
 import SidebarItem from './SidebarItem';
-import { useCanvasElements } from '../../context/useCanvasElements';
+import useCanvasElements from '../../context/useCanvasElements';
 
 const Sidebar = () => {
   const { addElement } = useCanvasElements();

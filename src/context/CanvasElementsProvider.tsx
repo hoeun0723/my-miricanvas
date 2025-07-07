@@ -16,9 +16,21 @@ const CanvasElementsProvider = ({ children }: Props) => {
     setElements((prev) => [...prev, newElement]);
   };
 
+   const moveElement = (id: string, x: number, y: number) => {
+    setElements((prev) =>
+      prev.map((el) => (el.id === id ? { ...el, x, y } : el))
+    );
+  };
+
+  const removeElement = (id: string) => {
+    setElements((prev) => prev.filter((el) => el.id !== id));
+  };
+
   const value: CanvasElementsContextType = {
     elements,
     addElement,
+    moveElement,
+    removeElement,
   };
 
   return (

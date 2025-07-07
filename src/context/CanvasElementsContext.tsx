@@ -4,6 +4,8 @@ import type { CanvasElement } from '../constants/canvasElementsTypes';
 export interface CanvasElementsContextType {
   elements: CanvasElement[];
   addElement: (item: Omit<CanvasElement, 'id'>) => void;
+  moveElement: (id: string, x: number, y: number) => void;
+  removeElement: (id: string) => void;
 }
 
 // context는 React 컴포넌트가 아니므로 이 파일엔 context만 export

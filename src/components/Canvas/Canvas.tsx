@@ -1,26 +1,33 @@
+import type { CanvasElement } from '../../constants/canvasElementsTypes';
+import useCanvasElements from '../../context/useCanvasElements';
 import styles from './Canvas.module.css';
-import { useCanvasElements } from '../../context/useCanvasElements';
 
 const Canvas = () => {
-  const { elements } = useCanvasElements();
+  const { elements, moveElement, removeElement } = useCanvasElements();
+
+  const handleDragEnd = (e: React.DragEvent<HTMLDivElement>, id: string) => {
+    const newX = e.clientX - 50;
+    const newY = e.clientY - 50;
+    moveElement(id, newX, newY);
+  };
 
   return (
     <div className={styles.canvas}>
-      {elements.map(({ id, type, value, x, y }) => (
+      {elements.map((el: CanvasElement) => (
         <div
-          key={id}
+          key={el.id}
           className={styles.element}
-          style={{
-            position: 'absolute',
-            left: x,
-            top: y,
-            cursor: 'pointer',
-            fontSize: type === 'text' ? '16px' : '24px',
-            userSelect: 'none',
-          }}
-          aria-label={`${type} element: ${value}`}
+          style={{ left: el.x, top: el.y }}
+          draggable
+          onDragEnd={(e) => handleDragEnd(e, el.id)}
         >
-          {value}
+          <span className={styles.value}>{el.value}</span>
+          <button
+            className={styles.deleteButton}
+            onClick={() => removeElement(el.id)}
+          >
+            ×
+          </button>
         </div>
       ))}
     </div>
