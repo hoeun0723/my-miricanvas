@@ -1,5 +1,5 @@
 import CanvasArea from '../../components/CanvasArea';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import Toolbar from '../../components/Toolbar';
 import styles from './Home.module.css';
 
