@@ -1,0 +1,20 @@
+@media (max-width: 1024px) {
+  html {
+    --padding-xl: 90px;
+    --padding-l: 40px;
+    --padding-m: 30px;
+    --padding-s: 20px;
+    --main-content-width: 90%;
+    --gnb-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    --padding-xl: 80px;
+    --padding-l: 30px;
+    --padding-m: 20px;
+    --main-content-width: 95%;
+    --gnb-height: 50px;
+  }
+}
