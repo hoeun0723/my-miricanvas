@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-/* 캔버스 내 요소 공통 스타일 */
+/* 요소 박스 */
 .element {
   position: absolute;
   display: flex;
@@ -22,27 +22,35 @@
   border: 1px solid var(--color-gray-1000);
   border-radius: 8px;
   cursor: grab;
-  transition: transform 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  user-select: none;
 }
 
 .element:active {
   cursor: grabbing;
 }
 
+.selected {
+  box-shadow: 0 0 0 3px var(--color-primary);
+}
+
 /* 요소 내용 */
 .value {
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
-/* 삭제 버튼 */
-.deleteButton {
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: var(--color-gray);
-  cursor: pointer;
-}
-
-.deleteButton:hover {
-  color: var(--color-black);
+/* 삭제 안내 문구 */
+.hint {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  background-color: var(--color-black);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: var(--z-index-top);
+  pointer-events: none;
 }
