@@ -1,0 +1,64 @@
+@import url('./media.css');
+
+/* 기본 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans', sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* 글로벌 변수 (Light 기본) */
+html {
+  --z-index-top: 999;
+  --z-index-second: 500;
+  --padding-xl: 100px;
+  --padding-l: 60px;
+  --padding-m: 50px;
+  --padding-s: 30px;
+  --main-content-width: 760px;
+
+  --space-l: 16px;
+  --space-m: 12px;
+  --space-s: 8px;
+
+  --color-background: #ffffff;
+  --color-text: #3a2e27;
+  --color-primary: #d78c49;
+  --color-secondary: #a8745d;
+  --color-white: #ffffff;
+  --color-black: #2e2e2e;
+}
+
+/* 다크모드 대응 (html에 .dark 클래스 추가 시 적용) */
+html.dark {
+  --color-background: #1f1b18;
+  --color-text: #e7e1dc;
+  --color-primary: #f5b56b;
+  --color-secondary: #d1a175;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+a,
+button {
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
