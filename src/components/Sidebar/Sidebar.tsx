@@ -1,12 +1,12 @@
 import styles from './Sidebar.module.css';
-import type { ElementType } from '../../constants/elements';
 import { ELEMENTS } from '../../constants/elements';
 import SidebarItem from './SidebarItem';
 import { RESUME_DATA } from '../../constants/resumeData';
 import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
+import type { ElementType } from '../../type/canvasElementsTypes';
 
 const Sidebar = () => {
-  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation,selectedColor,setSelectedColor } = useCanvasContext();
+  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation,selectedColor,setSelectedColor,setSelectedText } = useCanvasContext();
 
   const handleClick = (type: ElementType, value: string) => {
     console.log(`선택됨: [${type}] ${value}`);
@@ -20,7 +20,7 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <section>
-        <h3>이모지</h3>
+        <h4>이모지</h4>
         <div className={styles.group}>
           {ELEMENTS.emojis.map((emoji) => (
             <SidebarItem key={emoji} type="emoji" value={emoji} onClick={handleClick} />
@@ -29,7 +29,7 @@ const Sidebar = () => {
       </section>
 
       <section>
-        <h3>도형</h3>
+        <h4>도형</h4>
         <div className={styles.group}>
           {ELEMENTS.shapes.map((shape) => (
             <SidebarItem key={shape} type="shape" value={shape} onClick={handleClick} />
@@ -38,25 +38,18 @@ const Sidebar = () => {
       </section>
 
       <section>
-        <h3>텍스트</h3>
+        <h4>텍스트</h4>
         <div className={styles.group}>
           {ELEMENTS.texts.map((text) => (
-            <SidebarItem key={text} type="text" value={text} onClick={handleClick} />
+            <SidebarItem key={text} type="text" value={text} onClick={(_, value) => setSelectedText(value)} />
           ))}
         </div>
       </section>
 
       <section>
-        <h3>색상 변경</h3>
+        <h4>색상 변경</h4>
         <div className={styles.group}>
-          {[
-      '--highlight-color-1',
-      '--highlight-color-2',
-      '--highlight-color-3',
-      '--highlight-color-4',
-      '--highlight-color-5',
-      '--highlight-color-6',
-    ].map((colorVar) => (
+          {ELEMENTS.colors.map((colorVar) => (
             <button
               key={colorVar}
               style={{
@@ -76,7 +69,7 @@ const Sidebar = () => {
       </section>
 
       <section>
-        <h3>프로젝트 선택 (최대 2개)</h3>
+        <h4>프로젝트 선택 (최대 2개)</h4>
         <div className={styles.group}>
           {RESUME_DATA.projects.map((project) => {
             const isSelected = selectedProjects.some((p) => p.name === project.name);
@@ -99,7 +92,7 @@ const Sidebar = () => {
       </section>
 
       <section>
-        <h3>경험 추가</h3>
+        <h4>경험 추가</h4>
         <div className={styles.group}>
         <button className={styles.actionBtn} onClick={toggleAwards}>
           {showAwards ? '🏆 수상내역 숨기기' : '🏆 수상내역 보이기'}

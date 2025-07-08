@@ -126,9 +126,8 @@
 .mainTitleHighlight {
   font-size: 18px;
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: bold;
   display: block;
-  margin-bottom: 5px;
 }
 
 .summary {

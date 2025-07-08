@@ -1,5 +1,6 @@
+
+import type { ElementType } from '../../type/canvasElementsTypes';
 import styles from './Sidebar.module.css';
-import type { ElementType } from '../../constants/elements';
 
 interface SidebarItemProps {
   type: ElementType;

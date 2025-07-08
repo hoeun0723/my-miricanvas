@@ -1,4 +1,4 @@
-export type ElementType = 'emoji' | 'shape' | 'text';
+export type ElementType = 'emoji' | 'shape' | 'text' | 'color';
 
 export interface CanvasElement {
   id: string;
@@ -12,4 +12,5 @@ export interface ElementsType{
   emojis: string[];
   shapes: string[];
   texts: string[];
+  colors: string[];
 }

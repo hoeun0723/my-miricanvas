@@ -4,7 +4,7 @@ import styles from './ResumeRenderer.module.css';
 
 const ResumeRenderer = () => {
   const { name, image, summary, contact } = RESUME_DATA;
-  const { selectedProjects, showAwards, showEducation,selectedColor } = useCanvasContext();
+  const { selectedProjects, showAwards, showEducation,selectedColor,selectedText } = useCanvasContext();
   const { awards, education } = RESUME_DATA.experiences;
 
 
@@ -62,7 +62,7 @@ const ResumeRenderer = () => {
 
           <div className={styles.rightColumn}>
           <section className={styles.header}>
-            <h1 className={styles.mainTitle}><span className={styles.mainTitleHighlight}>텍스트</span><br/>{name} 입니다</h1>
+            <h1 className={styles.mainTitle}><span className={styles.mainTitleHighlight}>{selectedText}</span><br/>{name} 입니다</h1>
             {summary && <p className={styles.summary}>{summary}</p>}
           </section>
 

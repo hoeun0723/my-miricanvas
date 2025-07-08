@@ -26,7 +26,8 @@ interface CanvasContextType {
   toggleEducation: () => void;
   selectedColor: string;
   setSelectedColor: (colorVar: string) => void;
-
+  selectedText: string;
+  setSelectedText : (text: string) => void;
 }
 
 const CanvasContext = createContext<CanvasContextType | undefined>(undefined);
@@ -37,7 +38,7 @@ export const CanvasProvider = ({ children }: { children: ReactNode }) => {
   const [showAwards, setShowAwards] = useState(true);
   const [showEducation, setShowEducation] = useState(true);
   const [selectedColor, setSelectedColor] = useState('--highlight-color-1');
-
+  const [selectedText, setSelectedText] = useState('LED 전구가 되고 싶은 백열전구');
 
   const toggleAwards = () => setShowAwards(prev => !prev);
 const toggleEducation = () => setShowEducation(prev => !prev);
@@ -83,8 +84,10 @@ const toggleEducation = () => setShowEducation(prev => !prev);
   toggleEducation,
   selectedColor,
     setSelectedColor,
+    selectedText,
+    setSelectedText
     }),
-    [elements,selectedProjects,showAwards, showEducation,selectedColor,]
+    [elements,selectedProjects,showAwards, showEducation,selectedColor,selectedText]
   );
 
   return (
