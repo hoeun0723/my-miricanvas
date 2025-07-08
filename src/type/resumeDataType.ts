@@ -14,7 +14,7 @@ export interface ResumeDataType {
   };
 }
 
-type Project = {
+export interface Project  {
     name: string;
     date: string;
     role: string;
@@ -23,13 +23,13 @@ type Project = {
     learned: ProjectLearning[];
   };
 
-type ProjectLearning = {
+export interface ProjectLearning  {
       title: string;
       details: DetailItem[];
       result: string;
     };
 
-type DetailItem = {
+export interface DetailItem  {
     title: string;
     contents: string[];
 }

@@ -1,5 +1,5 @@
 .sidebar {
-  width: 200px;
+  width: 240px;
   background-color: var(--color-background-secondary);
   color: var(--color-text);
   padding: var(--space-m);
@@ -13,6 +13,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-s);
+}
+
+.actionBtn {
+  padding: 8px 12px;
+  background-color: var(--color-category-chip);
+  color: var(--color-text);
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.actionBtn:hover {
+  background-color: var(--color-category-chip-hover, #e0e0e0);
 }
 
 .item {

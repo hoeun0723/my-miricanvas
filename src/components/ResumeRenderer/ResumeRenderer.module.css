@@ -1,0 +1,136 @@
+.resume {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.6;
+  width: 100%;
+}
+
+/* 헤더 영역 */
+.header {
+  margin-bottom: 32px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.summary {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  color: var(--color-gray-700);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.links a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.links a:hover {
+  border-color: var(--color-primary);
+}
+
+/* 프로젝트 영역 */
+.projects {
+  margin-bottom: 32px;
+}
+
+.project {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+.projectName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.projectMeta {
+  font-size: 13px;
+  color: var(--color-gray-600);
+}
+
+.projectDesc {
+  margin: 6px 0;
+}
+
+.projectStack {
+  font-size: 13px;
+  color: var(--color-gray-800);
+  margin-bottom: 8px;
+}
+
+/* 학습 내용 */
+.learningSection {
+  padding-left: 12px;
+  margin-top: 12px;
+  border-left: 3px solid var(--color-primary-light);
+}
+
+.learningTitle {
+  font-weight: 600;
+  margin: 6px 0;
+  color: var(--color-primary);
+}
+
+.detailBlock {
+  margin: 8px 0;
+}
+
+.detailTitle {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.detailContents {
+  margin-left: 16px;
+  padding-left: 8px;
+  list-style-type: disc;
+}
+
+.result {
+  margin-top: 4px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-gray-600);
+}
+
+/* 경험 영역 */
+.experiences {
+  margin-top: 32px;
+}
+
+.experienceBlock {
+  margin-bottom: 16px;
+}
+
+.experienceBlock h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-anchor-text);
+}
+
+.experienceBlock ul {
+  margin-left: 16px;
+  padding-left: 8px;
+  list-style: disc;
+}
+
+.experienceBlock li {
+  margin-bottom: 4px;
+}
