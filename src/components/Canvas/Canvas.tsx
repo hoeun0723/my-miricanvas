@@ -12,7 +12,6 @@ const Canvas = () => {
   
   const handleDragStart = (
     e: React.DragEvent<HTMLDivElement>,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     id: string
   ) => {
     const target = e.currentTarget;
@@ -21,6 +20,7 @@ const Canvas = () => {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
     };
+    console.log(id);
   };
 
   const handleDragEnd = (
