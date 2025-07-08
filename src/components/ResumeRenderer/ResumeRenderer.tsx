@@ -67,7 +67,7 @@ const ResumeRenderer = () => {
         ))}
         {Array.from({ length: placeholdersCount }).map((_, idx) => (
           <div key={`placeholder-${idx}`} className={styles.projectPlaceholder}>
-            <p>+ 프로젝트를 선택해주세요</p>
+            <p>프로젝트를 선택해주세요</p>
           </div>
         ))}
       </section>
