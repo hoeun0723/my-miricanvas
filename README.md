@@ -7,8 +7,9 @@
 
 ## ✨ 프로젝트 개요
 
-미리디의 셀프 디자인 철학을 사랑하는 학생이  
-나만의 인터랙티브 프로필 에디터입니다.
+‘나를 디자인하는 미니 미리캔버스’는
+미리디의 셀프 디자인 철학을 진심으로 좋아하는 한 학생이 만든,
+나만의 인터랙티브 자기소개 에디터입니다.
 
 텍스트, 도형, 이모지, 색상을 직접 조합해  
 ‘나’를 재구성하는 경험을 제공하며,  
@@ -18,19 +19,22 @@
 
 ## 🎯 주요 기능
 
-- 텍스트, 이모지, 도형을 끌어다 놓아 자유롭게 배치  
-- 성격, 협업 스타일, 좋아하는 기술 등 나만의 정보를 말풍선으로 표현  
-- 테마 색상 선택으로 감성 컬러 적용  
-- 완성된 프로필을 이미지로 저장하는 캡처 기능(옵션)
+
+| 기능 | 설명 | 메시지 |
+| --- | --- | --- |
+| 🖼️ 캔버스 영역 | 드래그 가능한 텍스트/이모지/프로젝트 요소 추가 | "DOM 조작과 위치 제어를 이해합니다." |
+| 🎨 스타일 편집 | 색상/텍스트 유무 변경 가능 | "사용자 감성에 민감하고 디자인을 좋아합니다." |
+| 🧍 기본 카드 템플릿 | 기본적으로 내 소개 (이름, 요약, 링크, 교육내역 등)가 들어가 있음 | "Context API를 사용해 전역 상태로 불러왔습니다." |
+| 💾 PDF 다운로드 | 디자인 완료 시 PDF로 저장 가능 | "실제 이력서로도 활용할 수 있게 구현했습니다." |
+| ✨ 다크모드 | 다크/라이트 전환 가능 | "UX에 대한 세심한 배려를 더했습니다." |
 
 ---
 
 ## 🛠️ 기술 스택
-
-- React.js + TypeScript  
-- CSS Modules + absolute positioning 기반 UI  
-- React Hooks를 이용한 상태 관리  
-- Framer Motion 애니메이션
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=Swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/Velog-20C997?style=flat-square&logo=velog&logoColor=white"/>
 
 ---
 
@@ -40,6 +44,26 @@
 - 단순한 이력서가 아니라 ‘나를 디자인하는 인터랙티브 경험’ 포함  
 - UI/UX 감각과 코드 작성 능력 모두 보여주기
 
+- 미리캔버스를 정말 좋아한다는 마음을 개발자의 방식으로 표현
+- 단순한 이력서가 아닌, 나를 하나의 디자인으로 구성하는 감성적인 인터랙션
+- 코드 완성도보단 UI/UX 감각, 서비스 이해도, 구현 의지를 보여주는 데 집중
+
+  
+> 평소 프로젝트에서는 주로
+> ▸ 코드 리팩토링, ▸ 성능 개선, ▸ UI/UX 개선, ▸ 사용자 피드백 반영을 중심으로 경험을 쌓았습니다.
+> 그러나 텍스트, 이미지, 도형 등을 조합해 나만의 디자인을 만드는 캔버스 경험은 익숙하지 않았기에,
+> 이번 인턴십을 준비하며 의도적으로 도전해보았습니다.
+
+
+
+### 🎯 결과적으로 이 프로젝트는 다음을 말합니다:
+1. 미리디 서비스의 철학을 이해하고 직접 구현했다는 증거
+2. 처음 접하는 영역이라도 끝까지 구현해내는 실행력
+3. 미리캔버스 이력서 기능을 바탕으로 차별화된 아이디어 도출
+
+> 저는 개인적으로는 "프론트 웹" 팀이 더 적합하다고 생각하지만,
+> 한 영역에만 치우치지 않는 개발자가 되고 싶기에 이 작업을 선택했습니다.
+
 ---
 
 ## 🗂️ 프로젝트 구조
@@ -47,20 +71,39 @@
 ```
 src/
 ├── components/
-│ ├── CanvasArea.tsx
-│ ├── Sidebar.tsx
-│ ├── Toolbar.tsx
-│ ├── Element.tsx
-│ └── ExportButton.tsx
+│ ├── Canvas
+│ ├── ResumeRenderer
+│ ├── Sidebar
+│ └── Toolbar
+├── constants
+├── context/
+│ ├── CanvasContext
+│ ├── ThemeContext
 ├── pages/
-│ └── Home.tsx
+│ ├── Home
+│ ├── IntroPage
+│ └── OutroPage
+├── router
 ├── styles/
-│ └── theme.ts
-└── utils/
-└── downloadImage.ts
+│ ├── media.css
+│ └── global.css
+├── utils/
+│ ├── browserStorage.ts
+│ ├── themeMode.ts
+│ └── index.ts
 ```
 
+---
 
+## 🎯 차별화 전략
+
+| 비교 항목 | 미리캔버스 이력서 기능 | 미니 미리캔버스 - 셀프 디자인 에디터 |
+| --- | --- | --- |
+| 🎨 템플릿 | 정형화된 레이아웃 제공 | 사용자가 자기소개 요소를 조립 |
+| ✏️ 목적 | PDF 이력서 완성 | 나을 ‘꾸며보는’ 감성적 UX 제공 |
+| 🎭 역할 | 일반 사용자 | 서비스 철학을 재해석한 개발자 |
+| 🧠 기능 구현 | 기존 UI 제공 | DOM 조작, drag & drop, 인터랙션 개발 |
+| ❤️ 감성 포인트 | 시각적 완성도 | **"미리디 철학에 진심인 사람"의 시그널** |
 
 ---
 
@@ -68,7 +111,10 @@ src/
 
 미리디와 미리캔버스를 사랑하는 마음을 담아  
 진심으로 제작한 프로젝트입니다.  
-읽어주셔서 감사합니다!
+짧은 시간 동안 만든 결과물이라 부족한 점도 있지만,
+진심만큼은 잘 전달되었으면 합니다.
+
+감사합니다!
 
 ---
 
@@ -76,5 +122,4 @@ src/
 
 - 이메일: [hoeun0723@naver.com]  
 - GitHub: [https://github.com/hoeun0723]  
-- Blog: [https://hoeun0723.github.io/]
 
