@@ -5,7 +5,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -23,7 +22,7 @@
 .leftColumn {
   width: 30%;
   background-color: #f7f9fc;
-  padding: 30px 20px;
+  padding: 40px 30px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -39,7 +38,7 @@
 
 
 .profileSection {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -53,12 +52,12 @@
 
 
 .section {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   width: 100%;
 }
 
 .sectionTitle {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: var(--color-primary);
   margin-bottom: 15px;
