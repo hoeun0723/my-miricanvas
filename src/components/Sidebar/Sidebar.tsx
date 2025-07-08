@@ -6,7 +6,7 @@ import { RESUME_DATA } from '../../constants/resumeData';
 import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 
 const Sidebar = () => {
-  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation } = useCanvasContext();
+  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation,selectedColor,setSelectedColor } = useCanvasContext();
 
   const handleClick = (type: ElementType, value: string) => {
     console.log(`선택됨: [${type}] ${value}`);
@@ -47,9 +47,16 @@ const Sidebar = () => {
       </section>
 
       <section>
-        <h3>색상 강조</h3>
+        <h3>색상 변경</h3>
         <div className={styles.group}>
-          {['--color-anchor-text', '--color-highlight', '--color-primary'].map((colorVar) => (
+          {[
+      '--highlight-color-1',
+      '--highlight-color-2',
+      '--highlight-color-3',
+      '--highlight-color-4',
+      '--highlight-color-5',
+      '--highlight-color-6',
+    ].map((colorVar) => (
             <button
               key={colorVar}
               style={{
@@ -57,12 +64,12 @@ const Sidebar = () => {
                 width: '32px',
                 height: '32px',
                 borderRadius: '50%',
-                border: '1px solid #ccc',
+                border: '2px solid #ccc',
                 cursor: 'pointer',
+                outline: selectedColor === colorVar ? '3px solid black' : 'none',
               }}
-              onClick={() => {
-                console.log(`${colorVar} 강조 적용`);
-              }}
+              aria-label={`색상 ${colorVar}`}
+              onClick={() => setSelectedColor(colorVar)}
             />
           ))}
         </div>

@@ -20,12 +20,12 @@ interface CanvasContextType {
   removeElement: (id: string) => void;
   selectedProjects: Project[];
   toggleProject: (project: Project) => void;
-
   showAwards: boolean;
   toggleAwards: () => void;
-
   showEducation: boolean;
   toggleEducation: () => void;
+  selectedColor: string;
+  setSelectedColor: (colorVar: string) => void;
 
 }
 
@@ -36,12 +36,14 @@ export const CanvasProvider = ({ children }: { children: ReactNode }) => {
   const [selectedProjects, setSelectedProjects] = useState<Project[]>([]);
   const [showAwards, setShowAwards] = useState(true);
   const [showEducation, setShowEducation] = useState(true);
-  
+  const [selectedColor, setSelectedColor] = useState('--highlight-color-1');
+
+
   const toggleAwards = () => setShowAwards(prev => !prev);
 const toggleEducation = () => setShowEducation(prev => !prev);
   
   const addElement = (element: CanvasElementInput) => {
-    const id = crypto.randomUUID(); // 고유 ID 생성
+    const id = crypto.randomUUID();
     setElements((prev) => [...prev, { id, ...element }]);
   };
 
@@ -79,8 +81,10 @@ const toggleEducation = () => setShowEducation(prev => !prev);
   toggleAwards,
   showEducation,
   toggleEducation,
+  selectedColor,
+    setSelectedColor,
     }),
-    [elements,selectedProjects,showAwards, showEducation]
+    [elements,selectedProjects,showAwards, showEducation,selectedColor,]
   );
 
   return (

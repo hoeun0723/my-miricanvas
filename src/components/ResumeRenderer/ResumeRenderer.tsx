@@ -4,7 +4,7 @@ import styles from './ResumeRenderer.module.css';
 
 const ResumeRenderer = () => {
   const { name, summary, contact } = RESUME_DATA;
-  const { selectedProjects, showAwards, showEducation } = useCanvasContext();
+  const { selectedProjects, showAwards, showEducation,selectedColor } = useCanvasContext();
   const { awards, education } = RESUME_DATA.experiences;
 
 
@@ -17,7 +17,10 @@ const ResumeRenderer = () => {
 
 
   return (
-    <div className={styles.resume}>
+    <div className={styles.resume} style={{
+      '--color-primary': `var(${selectedColor})`,
+      '--color-anchor-text': `var(${selectedColor})`,
+    } as React.CSSProperties}>
       <section className={styles.header}>
         <h1 className="color-anchor-text">{name}</h1>
         <p>{summary}</p>
