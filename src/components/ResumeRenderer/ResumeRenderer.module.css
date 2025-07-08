@@ -1,7 +1,7 @@
 .resume {
   font-family: 'Pretendard', sans-serif;
   font-size: 14px;
-  color: var(--color-text);
+  color: black;
   line-height: 1.6;
   width: 100%;
 }
@@ -133,4 +133,26 @@
 
 .experienceBlock li {
   margin-bottom: 4px;
+}
+
+.projectPlaceholder {
+  width: 100%;
+  min-height: 220px; /* 프로젝트 카드 높이와 비슷하게 조절 */
+  border: 2px dashed var(--color-primary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 24px;
+  background-color: var(--color-background-secondary);
+  cursor: default;
+}
+
+.noProjectMsg {
+  margin-bottom: 16px;
+  color: var(--color-text-secondary);
+  font-style: italic;
 }

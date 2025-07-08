@@ -1,8 +1,13 @@
 import { RESUME_DATA } from '../../constants/resumeData';
+import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 import styles from './ResumeRenderer.module.css';
 
 const ResumeRenderer = () => {
-  const { name, summary, contact, projects, experiences } = RESUME_DATA;
+  const { name, summary, contact, experiences } = RESUME_DATA;
+  const { selectedProjects } = useCanvasContext();
+
+  const visibleProjects = selectedProjects.slice(0, 2);
+  const placeholdersCount = 2 - visibleProjects.length;
 
   return (
     <div className={styles.resume}>
@@ -19,7 +24,10 @@ const ResumeRenderer = () => {
 
       <section className={styles.projects}>
         <h2 className="color-anchor-text">Projects</h2>
-        {projects.map((project) => (
+        {visibleProjects.length === 0 && (
+          <p className={styles.noProjectMsg}>프로젝트를 선택해주세요.</p>
+        )}
+        {visibleProjects.map((project) => (
           <div key={project.name} className={styles.project}>
             <h3 className={styles.projectName}>{project.name}</h3>
             <p className={styles.projectMeta}>{project.date} · {project.role}</p>
@@ -45,6 +53,11 @@ const ResumeRenderer = () => {
                 <p className={styles.result}><strong>📈 Result:</strong> {learning.result}</p>
               </div>
             ))}
+          </div>
+        ))}
+        {Array.from({ length: placeholdersCount }).map((_, idx) => (
+          <div key={`placeholder-${idx}`} className={styles.projectPlaceholder}>
+            <p>+ 프로젝트를 선택해주세요</p>
           </div>
         ))}
       </section>
