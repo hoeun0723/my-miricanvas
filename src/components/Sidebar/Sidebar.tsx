@@ -6,7 +6,7 @@ import { RESUME_DATA } from '../../constants/resumeData';
 import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 
 const Sidebar = () => {
-  const { addElement, selectedProjects, toggleProject } = useCanvasContext();
+  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation } = useCanvasContext();
 
   const handleClick = (type: ElementType, value: string) => {
     console.log(`선택됨: [${type}] ${value}`);
@@ -94,25 +94,13 @@ const Sidebar = () => {
       <section>
         <h3>경험 추가</h3>
         <div className={styles.group}>
-          <button
-            className={styles.actionBtn}
-            onClick={() => {
-              console.log('수상내역 요소 추가');
-              // 구현: 지정된 위치에 수상내역 element 추가
-            }}
-          >
-            🏆 수상내역 추가
-          </button>
-          <button
-            className={styles.actionBtn}
-            onClick={() => {
-              console.log('교육내역 요소 추가');
-              // 구현: 지정된 위치에 교육내역 element 추가
-            }}
-          >
-            🎓 교육내역 추가
-          </button>
-        </div>
+        <button className={styles.actionBtn} onClick={toggleAwards}>
+          {showAwards ? '🏆 수상내역 숨기기' : '🏆 수상내역 보이기'}
+        </button>
+        <button className={styles.actionBtn} onClick={toggleEducation}>
+          {showEducation ? '🎓 교육내역 숨기기' : '🎓 교육내역 보이기'}
+        </button>
+      </div>
       </section>
     </aside>
   );

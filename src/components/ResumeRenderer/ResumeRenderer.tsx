@@ -3,11 +3,18 @@ import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 import styles from './ResumeRenderer.module.css';
 
 const ResumeRenderer = () => {
-  const { name, summary, contact, experiences } = RESUME_DATA;
-  const { selectedProjects } = useCanvasContext();
+  const { name, summary, contact } = RESUME_DATA;
+  const { selectedProjects, showAwards, showEducation } = useCanvasContext();
+  const { awards, education } = RESUME_DATA.experiences;
+
 
   const visibleProjects = selectedProjects.slice(0, 2);
   const placeholdersCount = 2 - visibleProjects.length;
+
+  const noExperienceToShow =
+    (!showAwards || awards.length === 0) && (!showEducation || education.length === 0);
+
+
 
   return (
     <div className={styles.resume}>
@@ -62,27 +69,33 @@ const ResumeRenderer = () => {
         ))}
       </section>
 
-      <section className={styles.experiences}>
-        <h2 className="color-anchor-text">Experience</h2>
+      {!noExperienceToShow && (
+        <section className={styles.experiences}>
+          <h2 className="color-anchor-text">Experience</h2>
 
-        <div className={styles.experienceBlock}>
-          <h4>🏆 수상 경력</h4>
-          <ul>
-            {experiences.awards.map((award, idx) => (
-              <li key={idx}>{award}</li>
-            ))}
-          </ul>
-        </div>
+          {showAwards && awards.length > 0 && (
+            <div className={styles.experienceBlock}>
+              <h4>🏆 수상 경력</h4>
+              <ul>
+                {awards.map((award, idx) => (
+                  <li key={idx}>{award}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        <div className={styles.experienceBlock}>
-          <h4>🎓 교육 이수</h4>
-          <ul>
-            {experiences.education.map((edu, idx) => (
-              <li key={idx}>{edu}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+          {showEducation && education.length > 0 && (
+            <div className={styles.experienceBlock}>
+              <h4>🎓 교육 이수</h4>
+              <ul>
+                {education.map((edu, idx) => (
+                  <li key={idx}>{edu}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
     </div>
   );
 };
