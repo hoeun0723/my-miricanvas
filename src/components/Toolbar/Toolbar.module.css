@@ -19,7 +19,7 @@
   gap: 12px;
 }
 
-.themeToggleButton {
+.themeToggleButton, .navigateButton {
   background-color: var(--color-category-chip);
   border-radius: 6px;
   padding: 6px 10px;
