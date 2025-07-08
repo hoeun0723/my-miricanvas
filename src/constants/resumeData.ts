@@ -4,7 +4,7 @@ export const RESUME_DATA: ResumeDataType = {
   name: "왕호은",
   summary:
     "특성화고부터 개발을 시작해 다양한 분야를 경험하며 스스로 성장하는 방법을 익혀왔습니다. 웹 개발에 매력을 느껴, 4번의 IT 동아리 활동과 10회의 프로젝트 배포를 경험하며 실전 경험을 쌓았습니다. '왜 이렇게 해야 하는가'를 끊임없이 질문하며 흐름을 파악하고 사고력을 기르는 습관은 저만의 강점입니다. 새로운 도전 앞에서 두려움을 즐거움으로 바꾸는 태도로 장기적인 임팩트를 남기는 개발자가 되고자 합니다.",
-  image: '/public/profile-image.jpg',
+  image: '/profile_image.png',
   contact: {
     email: "hoeun0723@naver.com",
     github: "https://github.com/hoeun0723",

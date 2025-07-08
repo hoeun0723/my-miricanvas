@@ -22,7 +22,7 @@ const ResumeRenderer = () => {
         <div className={styles.twoColumnLayout}>
         <div className={styles.leftColumn}>
           <div className={styles.profileSection}>
-            <img src={profileImage || image} alt="Profile" className={styles.profileImage} />
+            <img src={profileImage || image } alt="Profile" className={styles.profileImage} />
           </div>
 
           <section className={styles.section}>
