@@ -10,14 +10,19 @@ export const downloadCanvasAsPDF = async (canvasElement: HTMLElement) => {
     windowWidth: document.documentElement.offsetWidth,
     backgroundColor: null,
   });
-
   const imgData = canvas.toDataURL('image/png');
-  const pdf = new jsPDF({
-    orientation: 'portrait',
-    unit: 'px',
-    format: [794, 1123],
-  });
+  const canvasWidth = canvas.width;
+  const canvasHeight = canvas.height;
 
-  pdf.addImage(imgData, 'PNG', 0, 0, 794, 1123);
+ 
+  const pdfWidth = 210;
+  const pxPerMm = canvasWidth / pdfWidth;
+
+  
+  const pdfHeight = canvasHeight / pxPerMm;
+
+  const pdf = new jsPDF('p', 'mm', [pdfWidth, pdfHeight]);
+
+  pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
   pdf.save('my-canvas.pdf');
 };
