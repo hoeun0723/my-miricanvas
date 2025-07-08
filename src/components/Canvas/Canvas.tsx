@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
 import styles from './Canvas.module.css';
-import { useCanvasElements } from '../../context/CanvasContext/CanvasElementsProvider';
+import ResumeRenderer from '../ResumeRenderer/ResumeRenderer';
+import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 
 const Canvas = () => {
-  const { elements, moveElement, removeElement } = useCanvasElements();
+  const { elements, moveElement, removeElement } = useCanvasContext();
   const dragOffset = useRef({ x: 0, y: 0 });
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [showDeleteHint, setShowDeleteHint] = useState<string | null>(null);
@@ -59,6 +60,7 @@ const Canvas = () => {
   return (
     <div className={styles.canvasContainer}>
     <div id="canvas" className={styles.canvasSheet}>
+      <ResumeRenderer />
       {elements.map((el) => (
         <div
           key={el.id}
@@ -78,6 +80,7 @@ const Canvas = () => {
           )}
         </div>
       ))}
+      
     </div>
     </div>
   );

@@ -1,0 +1,240 @@
+.resume {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.twoColumnLayout {
+  display: flex;
+  width: 794px; 
+  min-height: 1123px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: hidden;
+}
+
+
+.leftColumn {
+  width: 30%;
+  background-color: #f7f9fc;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.rightColumn {
+  width: 70%;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+
+.profileSection {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+}
+
+
+.section {
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-primary-light);
+  text-align: left;
+}
+
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.links a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 14px;
+}
+
+.links a:hover {
+  color: var(--color-primary-dark);
+}
+
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoList li {
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 9px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.infoList li::before {
+  content: '•';
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+
+
+.header {
+  margin-bottom: 40px;
+  text-align: right;
+}
+
+.mainTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.mainTitleHighlight {
+  font-size: 18px;
+  color: var(--color-primary);
+  font-weight: bold;
+  display: block;
+}
+
+.summary {
+  margin-top: 10px;
+  font-size: 10px;
+  color: gray;
+  line-height: 1.6;
+}
+
+
+.project {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+.projectName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.projectMeta {
+  font-size: 9px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.projectDesc {
+  margin: 6px 0;
+  color: #555;
+  font-size: 11px;
+}
+
+.projectStack {
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+
+.learningSection {
+  padding-left: 12px;
+  margin-top: 12px;
+  border-left: 3px solid var(--color-primary-light);
+}
+
+.learningTitle {
+  font-weight: 600;
+  margin: 6px 0;
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.detailBlock {
+  margin: 8px 0;
+}
+
+.detailTitle {
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: #444;
+  font-size: 11px;
+}
+
+.detailContents {
+  margin-left: 16px;
+  padding-left: 8px;
+  list-style-type: disc;
+  color: #555;
+  font-size: 11px;
+}
+
+.detailContents li {
+  margin-bottom: 4px;
+}
+
+.result {
+  margin-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+  color: #666;
+}
+
+
+.projectPlaceholder {
+  width: 100%;
+  min-height: 200px;
+  border: 2px dashed var(--color-primary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 24px;
+  background-color: white;
+  cursor: default;
+  text-align: center;
+}
+
+
+.noProjectMsg {
+  margin-bottom: 16px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+}

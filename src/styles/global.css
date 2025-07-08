@@ -49,6 +49,14 @@ body,body.light {
     --color-gray-1000: #4d433c;
     --color-overlay: #5c5144cc;
 
+  
+   --highlight-color-1: #FF8C00;
+  --highlight-color-2: #FFCD00;
+  --highlight-color-3: #00D74B;
+  --highlight-color-4: #3182f6;
+  --highlight-color-5: #ff153c;
+  --highlight-color-6: #21AFBF;
+
 }
 
 
@@ -67,7 +75,7 @@ body.dark {
     --color-table-border: #6f5f55;
     --color-navigation-shadow: rgba(0, 0, 0, 0.08);
 
-    --color-primary: #f5b56b;
+    --color-primary: #d78c49;
     --color-secondary: #d1a175;
 }
 
