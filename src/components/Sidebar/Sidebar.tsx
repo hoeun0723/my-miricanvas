@@ -15,6 +15,7 @@ const Sidebar = () => {
 
     addElement({ type, value, x, y });
   };
+  
 
   return (
     <aside className={styles.sidebar}>
@@ -48,7 +49,6 @@ const Sidebar = () => {
       <section>
         <h3>색상 강조</h3>
         <div className={styles.group}>
-          {/* 색상 선택 버튼들 (예시용) */}
           {['--color-anchor-text', '--color-highlight', '--color-primary'].map((colorVar) => (
             <button
               key={colorVar}
@@ -62,7 +62,6 @@ const Sidebar = () => {
               }}
               onClick={() => {
                 console.log(`${colorVar} 강조 적용`);
-                // 추후 구현: 중요한 단어의 색상 변경
               }}
             />
           ))}
@@ -74,13 +73,16 @@ const Sidebar = () => {
         <div className={styles.group}>
           {RESUME_DATA.projects.map((project) => {
             const isSelected = selectedProjects.some((p) => p.name === project.name);
+            const disableCheckbox = !isSelected && selectedProjects.length >= 2;
             return (
               <label key={project.name} style={{ display: 'block', marginBottom: '6px' }}>
                 <input
                   type="checkbox"
                   checked={isSelected}
                   onChange={() => toggleProject(project)}
-                  disabled={!isSelected && selectedProjects.length >= 2}
+                  disabled={disableCheckbox}
+                  aria-checked={isSelected}
+                  aria-disabled={disableCheckbox}
                 />
                 <span style={{ marginLeft: '6px' }}>{project.name}</span>
               </label>

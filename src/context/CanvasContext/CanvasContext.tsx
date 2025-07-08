@@ -46,10 +46,13 @@ export const CanvasProvider = ({ children }: { children: ReactNode }) => {
   const toggleProject = (project: Project) => {
   setSelectedProjects((prev) => {
     const exists = prev.some((p) => p.name === project.name);
-    return exists
-      ? prev.filter((p) => p.name !== project.name)
-      : [...prev, project];
-  });
+    if (exists) {
+      return prev.filter((p) => p.name !== project.name);
+    } else if (prev.length < 2) {
+      return [...prev, project];
+    }
+    return prev;
+    });
 };
 
   const value = useMemo(
@@ -61,7 +64,7 @@ export const CanvasProvider = ({ children }: { children: ReactNode }) => {
       selectedProjects,
       toggleProject,
     }),
-    [elements]
+    [elements,selectedProjects]
   );
 
   return (

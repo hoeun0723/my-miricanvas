@@ -80,6 +80,7 @@ const Canvas = () => {
           )}
         </div>
       ))}
+      
     </div>
     </div>
   );
