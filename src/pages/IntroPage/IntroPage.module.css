@@ -15,7 +15,7 @@
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  color: var(--color-paragraph);
+  color: var(--color-gray-1000);
 }
 
 .button {
@@ -31,5 +31,5 @@
 }
 
 .button:hover {
-  background-color: #e89c5a;
+  background-color: var(--color-primary);
 }
