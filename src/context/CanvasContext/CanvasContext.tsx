@@ -8,6 +8,7 @@ import {
 import type {ReactNode} from 'react';
 import type { Project } from '../../type/resumeDataType';
 import type { CanvasElement } from '../../type/canvasElementsTypes';
+import { RESUME_DATA } from '../../constants/resumeData';
 
 export type ElementType = 'emoji' | 'shape' | 'text' | 'project';
 
@@ -28,6 +29,8 @@ interface CanvasContextType {
   setSelectedColor: (colorVar: string) => void;
   selectedText: string;
   setSelectedText : (text: string) => void;
+  profileImage: string;
+  setProfileImage : (img: string) => void;
 }
 
 const CanvasContext = createContext<CanvasContextType | undefined>(undefined);
@@ -39,6 +42,7 @@ export const CanvasProvider = ({ children }: { children: ReactNode }) => {
   const [showEducation, setShowEducation] = useState(true);
   const [selectedColor, setSelectedColor] = useState('--highlight-color-1');
   const [selectedText, setSelectedText] = useState('LED 전구가 되고 싶은 백열전구');
+  const [profileImage, setProfileImage] = useState<string>(RESUME_DATA.image || '');
 
   const toggleAwards = () => setShowAwards(prev => !prev);
 const toggleEducation = () => setShowEducation(prev => !prev);
@@ -85,9 +89,11 @@ const toggleEducation = () => setShowEducation(prev => !prev);
   selectedColor,
     setSelectedColor,
     selectedText,
-    setSelectedText
+    setSelectedText,
+    profileImage,
+    setProfileImage,
     }),
-    [elements,selectedProjects,showAwards, showEducation,selectedColor,selectedText]
+    [elements,selectedProjects,showAwards, showEducation,selectedColor,selectedText, profileImage]
   );
 
   return (

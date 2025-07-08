@@ -6,7 +6,7 @@ import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 import type { ElementType } from '../../type/canvasElementsTypes';
 
 const Sidebar = () => {
-  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation,selectedColor,setSelectedColor,setSelectedText } = useCanvasContext();
+  const { addElement, selectedProjects, toggleProject,toggleAwards, toggleEducation, showAwards, showEducation,selectedColor,setSelectedColor,setSelectedText,setProfileImage } = useCanvasContext();
 
   const handleClick = (type: ElementType, value: string) => {
     console.log(`선택됨: [${type}] ${value}`);
@@ -36,6 +36,25 @@ const Sidebar = () => {
           ))}
         </div>
       </section>
+      <section>
+  <h4>프로필 이미지 변경</h4>
+  <input
+    type="file"
+    accept="image/*"
+    onChange={(e) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (typeof reader.result === 'string') {
+            setProfileImage(reader.result);
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }}
+  />
+</section>
 
       <section>
         <h4>텍스트</h4>

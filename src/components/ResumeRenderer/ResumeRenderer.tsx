@@ -3,8 +3,8 @@ import { useCanvasContext } from '../../context/CanvasContext/CanvasContext';
 import styles from './ResumeRenderer.module.css';
 
 const ResumeRenderer = () => {
-  const { name, image, summary, contact } = RESUME_DATA;
-  const { selectedProjects, showAwards, showEducation,selectedColor,selectedText } = useCanvasContext();
+  const { name,image, summary, contact } = RESUME_DATA;
+  const { selectedProjects, showAwards, showEducation,selectedColor,selectedText,profileImage } = useCanvasContext();
   const { awards, education } = RESUME_DATA.experiences;
 
 
@@ -22,7 +22,7 @@ const ResumeRenderer = () => {
         <div className={styles.twoColumnLayout}>
         <div className={styles.leftColumn}>
           <div className={styles.profileSection}>
-            <img src={image} alt="Profile" className={styles.profileImage} />
+            <img src={profileImage || image} alt="Profile" className={styles.profileImage} />
           </div>
 
           <section className={styles.section}>
