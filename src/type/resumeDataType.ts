@@ -1,6 +1,7 @@
 export interface ResumeDataType {
   name: string;
   summary: string;
+  image: string;
   contact: {
     email: string;
     github: string;

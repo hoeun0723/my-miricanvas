@@ -1,32 +1,77 @@
 .resume {
-  font-family: 'Pretendard', sans-serif;
   font-size: 14px;
-  color: black;
+  color: #333;
   line-height: 1.6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.twoColumnLayout {
+  display: flex;
+  width: 794px; 
+  min-height: 1123px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: hidden;
+}
+
+
+.leftColumn {
+  width: 30%;
+  background-color: #f7f9fc;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.rightColumn {
+  width: 70%;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+
+.profileSection {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+}
+
+
+.section {
+  margin-bottom: 25px;
   width: 100%;
 }
 
-/* 헤더 영역 */
-.header {
-  margin-bottom: 32px;
-}
-
-.name {
-  font-size: 24px;
-  font-weight: 700;
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
   color: var(--color-primary);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-primary-light);
+  text-align: left;
 }
 
-.summary {
-  margin-top: 8px;
-  margin-bottom: 12px;
-  color: var(--color-gray-700);
-}
 
 .links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   margin-top: 8px;
 }
 
@@ -34,18 +79,66 @@
   color: var(--color-primary);
   font-weight: 500;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  transition: color 0.2s;
+  font-size: 14px;
 }
 
 .links a:hover {
-  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
-/* 프로젝트 영역 */
-.projects {
-  margin-bottom: 32px;
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.infoList li {
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 9px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.infoList li::before {
+  content: '•';
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+
+
+.header {
+  margin-bottom: 40px;
+  text-align: right;
+}
+
+.mainTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.mainTitleHighlight {
+  font-size: 18px;
+  color: var(--color-primary);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.summary {
+  margin-top: 10px;
+  font-size: 10px;
+  color: gray;
+  line-height: 1.6;
+}
+
 
 .project {
   margin-bottom: 24px;
@@ -57,24 +150,28 @@
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 4px;
+  color: #333;
 }
 
 .projectMeta {
-  font-size: 13px;
-  color: var(--color-gray-600);
+  font-size: 9px;
+  color: #666;
+  margin-bottom: 8px;
 }
 
 .projectDesc {
   margin: 6px 0;
+  color: #555;
+  font-size: 11px;
 }
 
 .projectStack {
-  font-size: 13px;
-  color: var(--color-gray-800);
+  font-size: 12px;
+  color: #444;
   margin-bottom: 8px;
 }
 
-/* 학습 내용 */
+
 .learningSection {
   padding-left: 12px;
   margin-top: 12px;
@@ -85,6 +182,7 @@
   font-weight: 600;
   margin: 6px 0;
   color: var(--color-primary);
+  font-size: 13px;
 }
 
 .detailBlock {
@@ -94,50 +192,33 @@
 .detailTitle {
   font-weight: 500;
   margin-bottom: 2px;
+  color: #444;
+  font-size: 11px;
 }
 
 .detailContents {
   margin-left: 16px;
   padding-left: 8px;
   list-style-type: disc;
+  color: #555;
+  font-size: 11px;
+}
+
+.detailContents li {
+  margin-bottom: 4px;
 }
 
 .result {
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 12px;
   font-style: italic;
-  color: var(--color-gray-600);
+  color: #666;
 }
 
-/* 경험 영역 */
-.experiences {
-  margin-top: 32px;
-}
-
-.experienceBlock {
-  margin-bottom: 16px;
-}
-
-.experienceBlock h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--color-anchor-text);
-}
-
-.experienceBlock ul {
-  margin-left: 16px;
-  padding-left: 8px;
-  list-style: disc;
-}
-
-.experienceBlock li {
-  margin-bottom: 4px;
-}
 
 .projectPlaceholder {
   width: 100%;
-  min-height: 220px; /* 프로젝트 카드 높이와 비슷하게 조절 */
+  min-height: 200px;
   border: 2px dashed var(--color-primary);
   border-radius: 8px;
   display: flex;
@@ -149,10 +230,13 @@
   margin-bottom: 24px;
   background-color: white;
   cursor: default;
+  text-align: center;
 }
+
 
 .noProjectMsg {
   margin-bottom: 16px;
   color: var(--color-text-secondary);
   font-style: italic;
+  text-align: center;
 }
