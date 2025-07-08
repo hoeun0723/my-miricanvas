@@ -1,14 +1,21 @@
 .wrapper {
-  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 4rem 0;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box; 
 }
 
 .title {
+  width:100%;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .paragraph {
@@ -24,7 +31,7 @@
   font-size: 1rem;
   font-weight: bold;
   border-radius: 8px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   color: white;
   border: none;
   transition: background-color 0.2s ease-in-out;
