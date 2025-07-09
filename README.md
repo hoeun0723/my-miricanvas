@@ -39,9 +39,9 @@ https://github.com/user-attachments/assets/e6865e6b-334a-401d-978d-1e7733d8fce8
 
 ## 🛠️ 기술 스택
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
-<img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=Swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/Velog-20C997?style=flat-square&logo=velog&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 
 ---
 
@@ -68,7 +68,7 @@ https://github.com/user-attachments/assets/e6865e6b-334a-401d-978d-1e7733d8fce8
 2. 처음 접하는 영역이라도 끝까지 구현해내는 실행력
 3. 미리캔버스 이력서 기능을 바탕으로 차별화된 아이디어 도출
 
-> 제가 해온 활동들이 "프론트 웹" 팀이 더 적합하다고 생각하지만,
+> 제가 해온 프로젝트들이 미리캔버스 ICT 인턴쉽에서 프론트 웹팀에 더 적합하다고 생각하였지만,
 > 한 영역에만 치우치지 않는 개발자가 되고 싶기에 이 작업을 진행했습니다.
 
 ---
